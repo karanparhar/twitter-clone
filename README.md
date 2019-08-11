@@ -29,11 +29,5 @@ $ curl -X GET http://localhost:8090/fetchblocks
 ```
 $ curl -X GET http://localhost:8090/gettransaction
 ```
-
-
-
-### Note it will build rest service and crd and deploy in local kubernetes cluster 
-
-### if role binding issue came kubectl create clusterrolebinding serviceaccounts-cluster-admin --clusterrole=cluster-admin --group=system:serviceaccounts
  
  
