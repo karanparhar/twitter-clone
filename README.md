@@ -23,11 +23,11 @@ $ curl -X GET http://localhost:8090/
 ```
 ## get blocks
 ```
-$ curl -X GET http://localhost:8090/fetchblocks
+$ curl -X GET "http://localhost:8090/fetchblocks?&blocks=100"
 ```
 ## get transactions
 ```
-$ curl -X GET http://localhost:8090/gettransaction
+$ curl -X GET "http://localhost:8090/gettransaction?&trhash=0x39705515c4776ba5ebd2b8690ea9f0d956369135d39956897e4970031f73ec2d"
 ```
  
  
