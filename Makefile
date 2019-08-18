@@ -4,7 +4,7 @@ GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
-BINARY_NAME=ethereum
+BINARY_NAME=twitter-clone
 BINARY_UNIX=$(BINARY_NAME)_unix
 all: test build
 fmt:
@@ -29,9 +29,9 @@ getdeps:
 build-linux:
 		CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(GOBUILD) -o $(BINARY_UNIX) -v
 docker:
-		docker build -t ethereum .
+		docker build -t twitter-clone .
 docker-run:
 
-		docker run -d  -p 8090:8090 ethereum:latest 
+		docker run -d  -p 8090:8090 twitter-clone:latest 
 
 .PHONY: all fmt build linux test clean run getdeps build-linux docker docker-run

@@ -2,99 +2,20 @@
 
 
 [[projects]]
-  digest = "1:e92f5581902c345eb4ceffdcd4a854fb8f73cf436d47d837d1ec98ef1fe0a214"
-  name = "github.com/StackExchange/wmi"
+  digest = "1:76dc72490af7174349349838f2fe118996381b31ea83243812a97e5a0fd5ed55"
+  name = "github.com/dgrijalva/jwt-go"
   packages = ["."]
   pruneopts = "UT"
-  revision = "5d049714c4a64225c3c79a7cf7d02f7fb5b96338"
-  version = "1.0.0"
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
 
 [[projects]]
-  digest = "1:e574dab86697e4e3a8e2e815e0e932cfbf3618e74d6379d8732b33757e11b23d"
-  name = "github.com/allegro/bigcache"
-  packages = [
-    ".",
-    "queue",
-  ]
-  pruneopts = "UT"
-  revision = "e24eb225f15679bbe54f91bfa7da3b00e59b9768"
-
-[[projects]]
-  digest = "1:f5322546f652db78b7a8efd35047a61d1e492abca2263e1c647eca49e1c8a354"
-  name = "github.com/aristanetworks/goarista"
-  packages = ["monotime"]
-  pruneopts = "UT"
-  revision = "ea17b1a17847fb6e4c0a91de0b674704693469b0"
-
-[[projects]]
-  digest = "1:477f6df8a1915abb180d730179a4a45212328effdf98cc6ca5b0e5741db00125"
-  name = "github.com/btcsuite/btcd"
-  packages = ["btcec"]
-  pruneopts = "UT"
-  revision = "2e60448ffcc6bf78332d1fe590260095f554dd78"
-
-[[projects]]
-  digest = "1:1aeb4854a1c278e842712cd6684f48d595cbdd7839655d37a77248efa08c9fc0"
-  name = "github.com/deckarep/golang-set"
+  digest = "1:c79fb010be38a59d657c48c6ba1d003a8aa651fa56b579d959d74573b7dff8e1"
+  name = "github.com/gorilla/context"
   packages = ["."]
   pruneopts = "UT"
-  revision = "504e848d77ea4752b3057b8fb46da0e7f746ccf3"
-
-[[projects]]
-  digest = "1:e7c526eb232bb9f1312630d216dd4242c902901a4e820deb6b17aabfb3010992"
-  name = "github.com/elastic/gosigar"
-  packages = [
-    ".",
-    "sys/windows",
-  ]
-  pruneopts = "UT"
-  revision = "37f05ff46ffa7a825d1b24cf2b62d4a4c1a9d2e8"
-
-[[projects]]
-  digest = "1:b154ddfbd682974e3b642136bd889218bad08b9d03bc63c5f6c01e22015e9039"
-  name = "github.com/ethereum/go-ethereum"
-  packages = [
-    ".",
-    "common",
-    "common/hexutil",
-    "common/math",
-    "common/mclock",
-    "common/prque",
-    "core/types",
-    "crypto",
-    "crypto/secp256k1",
-    "ethclient",
-    "ethdb",
-    "log",
-    "metrics",
-    "p2p/netutil",
-    "params",
-    "rlp",
-    "rpc",
-    "trie",
-  ]
-  pruneopts = "UT"
-  revision = "b7b2f60f866d92e75db5bfe5be51b48eadeb3150"
-  version = "v1.9.1"
-
-[[projects]]
-  digest = "1:440028f55cb322d8cb5b9d5ebec298a00b7d74690a658fe6b1c0c0b44341bfae"
-  name = "github.com/go-ole/go-ole"
-  packages = [
-    ".",
-    "oleutil",
-  ]
-  pruneopts = "UT"
-  revision = "97b6244175ae18ea6eef668034fd6565847501c9"
-  version = "v1.2.4"
-
-[[projects]]
-  digest = "1:33542eaf895b5489ccfb059502a721f0e8875379da8b3ff60fdd9212d503705c"
-  name = "github.com/go-stack/stack"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "54be5f394ed2c3e19dac9134a40a95ba5a017f7b"
-  version = "v1.5.4"
+  revision = "08b5f424b9271eedf6f9f0ce86cb9396ed337a42"
+  version = "v1.1.1"
 
 [[projects]]
   digest = "1:b117faf01abdbdadd7b8ceeae74cd1369c1b073fef41aee8b674c9d704a54c16"
@@ -113,14 +34,6 @@
   version = "v1.7.3"
 
 [[projects]]
-  branch = "master"
-  digest = "1:eb4427b04427d572de4176fc54e599c9054513ce558042c75bbd5b13a89b38d8"
-  name = "github.com/gorilla/websocket"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "ae1634f6a98965ded3b8789c626cb4e0bd78c3de"
-
-[[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
   name = "github.com/konsorten/go-windows-terminal-sequences"
   packages = ["."]
@@ -129,28 +42,12 @@
   version = "v1.0.2"
 
 [[projects]]
-  digest = "1:cf31692c14422fa27c83a05292eb5cbe0fb2775972e8f1f8446a71549bd8980b"
-  name = "github.com/pkg/errors"
+  digest = "1:53bc4cd4914cd7cd52139990d5170d6dc99067ae31c56530621b18b35fc30318"
+  name = "github.com/mitchellh/mapstructure"
   packages = ["."]
   pruneopts = "UT"
-  revision = "ba968bfe8b2f7e042a574c888954fccecfa385b4"
-  version = "v0.8.1"
-
-[[projects]]
-  digest = "1:4b9bd28bbf14271f4b89a6c401589ea5939d14138e0399c253c1939cc4252d2f"
-  name = "github.com/rs/cors"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "a62a804a8a009876ca59105f7899938a1349f4b3"
-  version = "v1.0"
-
-[[projects]]
-  digest = "1:9665a593c0199c193341b8b110e31b19c899923711fc70bde2c2f3eb2d337526"
-  name = "github.com/rs/xhandler"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "d9d9599b6aaf6a058cb7b1f48291ded2cbd13390"
-  version = "v1.0"
+  revision = "3536a929edddb9a5b34bd6861dc4a9647cb459fe"
+  version = "v1.1.2"
 
 [[projects]]
   digest = "1:04457f9f6f3ffc5fea48e71d62f2ca256637dee0a04d710288e27e05c8b41976"
@@ -162,26 +59,14 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:93a3f1d1cbda580d4e0354f3a5449b9cb9a660c41b94fbf646fa9b7d4247c4c2"
-  name = "github.com/steakknife/bloomfilter"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "6819c0d2a57025e1700378ee59b7382d71987f14"
-
-[[projects]]
-  digest = "1:5ca4bdccd72e66aaba5b52f9c4a21f1021102f0919432fe138ad5d48abf06833"
-  name = "github.com/steakknife/hamming"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "003c143a81c25ea5e263d692919c611c7122ae6b"
-  version = "0.2.5"
-
-[[projects]]
-  digest = "1:a4746994e0de90b81252c00616e6f904e5a8d03ec55da3ff3c447a7d5ddae7e1"
+  digest = "1:9d5b5d543996dd584da1db1e0de1926f3e4c3a8dba0fa2f8db70f3ebee2342e0"
   name = "golang.org/x/crypto"
-  packages = ["sha3"]
+  packages = [
+    "bcrypt",
+    "blowfish",
+  ]
   pruneopts = "UT"
-  revision = "ff983b9c42bc9fbf91556e191cc8efb585c16908"
+  revision = "4def268fd1a49955bfb3dda92fe3db4f924f2285"
 
 [[projects]]
   branch = "master"
@@ -189,22 +74,19 @@
   name = "golang.org/x/net"
   packages = ["context"]
   pruneopts = "UT"
-  revision = "ca1201d0de80cfde86cb01aea620983605dfe99b"
+  revision = "74dc4d7220e7acc4e100824340f3e66577424772"
 
 [[projects]]
   branch = "master"
-  digest = "1:00d73f8175ba939718fdfc3d3ecab52270c6d801a1930fbca62100f9a4d8f4c1"
+  digest = "1:47844666be86089349a441f5f0ece22f42a87a8cb8c9a31294c593f43209ad19"
   name = "golang.org/x/sys"
-  packages = [
-    "unix",
-    "windows",
-  ]
+  packages = ["unix"]
   pruneopts = "UT"
-  revision = "51ab0e2deafac1f46c46ad59cf0921be2f180c3d"
+  revision = "fde4db37ae7ad8191b03d30d27f258b5291ae4e3"
 
 [[projects]]
   branch = "v2"
-  digest = "1:97621dcf0e6186638399ed6848aaf14b70cedaa2590e6ce3d3f8c723f30a94bb"
+  digest = "1:d42ac4409adfb66127dfe589b14502e4158c7649b58872ab147d567ce1206871"
   name = "gopkg.in/mgo.v2"
   packages = [
     ".",
@@ -215,15 +97,7 @@
     "internal/scram",
   ]
   pruneopts = "UT"
-  revision = "9856a29383ce1c59f308dd1cf0363a79b5bef6b5"
-
-[[projects]]
-  branch = "v2"
-  digest = "1:3d3f9391ab615be8655ae0d686a1564f3fec413979bb1aaf018bac1ec1bb1cc7"
-  name = "gopkg.in/natefinch/npipe.v2"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "c1b8fa8bdccecb0b8db834ee0b92fdbcfa606dd6"
+  revision = "a6b53ec6cb22a3699387a57a161566f9402ee85b"
 
 [[projects]]
   branch = "v2"
@@ -237,11 +111,13 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/ethereum/go-ethereum/core/types",
-    "github.com/ethereum/go-ethereum/ethclient",
+    "github.com/dgrijalva/jwt-go",
+    "github.com/gorilla/context",
     "github.com/gorilla/handlers",
     "github.com/gorilla/mux",
+    "github.com/mitchellh/mapstructure",
     "github.com/sirupsen/logrus",
+    "golang.org/x/crypto/bcrypt",
     "gopkg.in/mgo.v2",
     "gopkg.in/mgo.v2/bson",
     "gopkg.in/mgo.v2/dbtest",

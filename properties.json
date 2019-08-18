@@ -1,9 +1,8 @@
 {
     "mongoip": [
-        "localhost:27017"
+        "192.168.99.100:32107"
     ],
-    "databasename": "ethereum",
-    "user": "accountUser",
-    "password": "password"
+    "databasename": "",
+    "user": "",
+    "password": ""
 }
-

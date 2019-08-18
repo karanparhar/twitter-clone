@@ -1,41 +1,38 @@
 package main
 
 import (
+	"context"
 	"net/http"
 	"os"
 	"time"
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/ethereum_project/config"
-	"github.com/ethereum_project/controller"
-	"github.com/ethereum_project/repository"
-	u "github.com/ethereum_project/usecase"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/twitter-clone/config"
+	"github.com/twitter-clone/controller"
+
+	//"github.com/twitter-clone/middleware"
+	tweetsrepository "github.com/twitter-clone/tweets/repository"
+	usecase "github.com/twitter-clone/usecase/users"
+	userrepo "github.com/twitter-clone/user-management/repository"
 )
 
 func main() {
 
-	conn := repository.GetSession(config.Conf)
+	conn := userrepo.GetSession(config.Conf)
 
-	repo := repository.NewBlocksRepository(conn)
+	repo := userrepo.NewUsersRepo(conn)
+	tweetsrepo := tweetsrepository.NewTweetsRepo(conn)
 
 	router := mux.NewRouter()
 
-	ethereum_client, err := u.NewClient(u.Trurl)
+	Context, _ := context.WithTimeout(context.Background(), time.Duration(5*time.Second))
 
-	if err != nil {
+	u := usecase.NewtransactionUsecase(Context, repo, tweetsrepo)
 
-		log.Fatalf("Not able to connect ethereum client", err)
-
-	}
-
-	timeoutContext := time.Duration(30 * time.Second)
-
-	usecase := u.NewtransactionUsecase(repo, timeoutContext, ethereum_client)
-
-	r := controller.NewHandler(router, usecase)
+	r := controller.NewHandler(router, u)
 
 	log.Fatal(http.ListenAndServe(":8090", handlers.LoggingHandler(os.Stdout, r)))
 

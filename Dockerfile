@@ -1,10 +1,8 @@
 # Builder
 FROM golang:alpine as builder
 
-RUN apk add --no-cache make gcc musl-dev linux-headers git make ca-certificates   
-
-WORKDIR /go/src/github.com/ethereum_project
-
+WORKDIR /go/src/github.com/twitter-clone
+RUN apk add --no-cache make gcc musl-dev linux-headers git make ca-certificates
 COPY . .
 RUN make build
 
@@ -20,7 +18,7 @@ COPY properties.json /app
 
 EXPOSE 8090
 
-COPY --from=builder /go/src/github.com/ethereum_project/ethereum  /app
+COPY --from=builder /go/src/github.com/twitter-clone/twitter-clone  /app
 
-CMD /app/ethereum
+CMD /app/twitter-clone -configfile=properties.json
 
