@@ -34,4 +34,11 @@ docker-run:
 
 		docker run -d  -p 8090:8090 twitter-clone:latest 
 
-.PHONY: all fmt build linux test clean run getdeps build-linux docker docker-run
+deploy:
+		kubectl apply -f deploy/mongo.yaml
+		kubectl create secret generic configfile  --from-file=properties.json
+		kubectl apply -f deploy/backend_service.yaml
+		kubectl apply -f deploy/backend.yaml
+
+
+.PHONY: all fmt build linux test clean run getdeps build-linux docker docker-run deploy
