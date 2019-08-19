@@ -23,7 +23,7 @@ type tweetsRepository struct {
 func GetSession(c config.Config) *mgo.Session {
 	info := &mgo.DialInfo{
 		Addrs:    c.MongoIPs,
-		Timeout:  60 * time.Second,
+		Timeout:  5 * time.Second,
 		Database: c.DatabaseName,
 		Username: c.User,
 		Password: c.Password,

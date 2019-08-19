@@ -19,6 +19,10 @@ func (t TweetsByTime) Less(i, j int) bool {
 	return t[i].Time > t[j].Time
 }
 
+const (
+	TweetLenth = 140
+)
+
 type tweet struct {
 	models.Tweet
 }
@@ -38,6 +42,11 @@ func (t *tweet) Validate() error {
 
 	if t.Text == "" {
 		return errors.New("text is empty")
+	}
+
+	if len(t.Text) > TweetLenth {
+		return errors.New("text is having more than 140 characters")
+
 	}
 
 	return nil
