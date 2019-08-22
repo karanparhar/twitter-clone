@@ -1,9 +1,10 @@
-package usersrepository
+package tweetsrepository
 
 import (
 	"context"
 	"io/ioutil"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/twitter-clone/models"
@@ -21,23 +22,19 @@ func TestNewUsersRepo(t *testing.T) {
 	// My main session var is now set to the temporary MongoDB instance
 	Session := Server.Session()
 
-	a := NewUsersRepo(Session)
-	user := models.Profile{
+	a := NewTweetsRepo(Session)
+	tweet := models.Tweet{
 		Username: "test",
-		Password: "testing",
+		Text:     "this in my first tweet",
+		Time:     time.Now().Unix(),
 	}
 
-	err := a.Insert(context.TODO(), &user)
+	err := a.Insert(context.TODO(), &tweet)
 
 	assert.NoError(t, err)
 
-	out, err := a.GetUser(context.TODO(), user)
+	out, err := a.GetTweets(context.TODO(), "test")
 	assert.NoError(t, err)
-	assert.NotNil(t, out, nil)
-	assert.Equal(t, user.Username, out.Username)
-
-	err = a.UpdateFollowers(context.TODO(), user, "test1")
-
-	assert.NoError(t, err)
+	assert.Equal(t, tweet.Username, out[0].Username)
 
 }

@@ -5,9 +5,6 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"time"
-
-	"github.com/twitter-clone/config"
 	mgo "gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 
@@ -17,26 +14,6 @@ import (
 
 type usersRepository struct {
 	Conn *mgo.Session
-}
-
-// GetSession function
-func GetSession(c config.Config) *mgo.Session {
-	info := &mgo.DialInfo{
-		Addrs:    c.MongoIPs,
-		Timeout:  5 * time.Second,
-		Database: c.DatabaseName,
-		Username: c.User,
-		Password: c.Password,
-	}
-
-	session, err := mgo.DialWithInfo(info)
-	if err != nil {
-		log.Fatalf("ERROR: Not Able to Connect to MongoDB")
-	}
-
-	session.SetMode(mgo.Monotonic, true)
-
-	return session
 }
 
 func (m *usersRepository) getCollection(dbname, collection string) (c *mgo.Collection) {

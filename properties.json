@@ -1,6 +1,6 @@
 {
     "mongoip": [
-        "192.168.99.100:32107"
+        "localhost:27017"
     ],
     "databasename": "",
     "user": "",

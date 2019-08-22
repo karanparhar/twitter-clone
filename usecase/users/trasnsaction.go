@@ -30,9 +30,19 @@ func NewtransactionUsecase(ctx context.Context, r usersrepository.Repository, t 
 
 }
 
+func (t *usecase) NewProfile(u models.Profile) usersrepository.Profile {
+
+	return user.NewProfile(u)
+
+}
+
+func (t *usecase) NewTweet(tw models.Tweet) tweets.Tweets {
+
+	return tweet.NewTweet(tw)
+}
 func (t *usecase) SignUp(u models.Profile) error {
 
-	t.users = user.NewProfile(u)
+	t.users = t.NewProfile(u)
 
 	err := t.users.Validate(t.contextTimeout)
 
@@ -57,7 +67,7 @@ func (t *usecase) Login(u models.Profile) (string, error) {
 		return "", err
 	}
 
-	t.users = user.NewProfile(*userdata)
+	t.users = t.NewProfile(*userdata)
 	err = t.users.Authenticate(t.contextTimeout, u.Password)
 
 	if err != nil {
@@ -76,7 +86,7 @@ func (t *usecase) FollowUser(u models.Profile, followerid string) error {
 		return err
 	}
 
-	t.users = user.NewProfile(*userdata)
+	t.users = t.NewProfile(*userdata)
 
 	return t.userrepo.UpdateFollowers(t.contextTimeout, *userdata, followerid)
 
@@ -84,7 +94,7 @@ func (t *usecase) FollowUser(u models.Profile, followerid string) error {
 
 func (t *usecase) InsertTweets(tw models.Tweet) error {
 
-	t.tweets = tweet.NewTweet(tw)
+	t.tweets = t.NewTweet(tw)
 
 	err := t.tweets.Validate()
 

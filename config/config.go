@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"time"
 
 	log "github.com/sirupsen/logrus"
+	"gopkg.in/mgo.v2"
 
 	"os"
 )
@@ -39,6 +41,26 @@ func GetConfig() Config {
 		os.Exit(1)
 	}
 	return configuration
+}
+
+// GetSession function
+func GetSession(c Config) *mgo.Session {
+	info := &mgo.DialInfo{
+		Addrs:    c.MongoIPs,
+		Timeout:  1 * time.Second,
+		Database: c.DatabaseName,
+		Username: c.User,
+		Password: c.Password,
+	}
+
+	session, err := mgo.DialWithInfo(info)
+	if err != nil {
+		log.Fatalf("ERROR: Not Able to Connect to MongoDB")
+	}
+
+	session.SetMode(mgo.Monotonic, true)
+
+	return session
 }
 
 func init() {

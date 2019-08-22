@@ -21,7 +21,7 @@ import (
 
 func main() {
 
-	conn := userrepo.GetSession(config.Conf)
+	conn := config.GetSession(config.Conf)
 
 	repo := userrepo.NewUsersRepo(conn)
 	tweetsrepo := tweetsrepository.NewTweetsRepo(conn)
