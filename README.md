@@ -12,7 +12,7 @@ This is sample twitter-clone
 ```
 $ mkdir $GOPATH/src/github.com/
 $ cd $GOPATH/src/github.com/
-$ git clone https://karanjit@bitbucket.org/karanjit/twitter-clone.git
+$ git clone https://github.com/karanparhar/twitter-clone.git
 $ cd twitter-clone
 $ make docker
 $ make deploy
